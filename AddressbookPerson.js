@@ -148,6 +148,16 @@ console.log(deletePersonFromArray(addressBook, "Ram"));
 
 console.log(countOfContactInAddressBook(addressBook));
 
+/**
+ * @purpose ->UC7 : Ability to ensure there is no Duplicate Entry of the same Person in the Address Book
+ * @param {*} Array 
+ * @returns 
+ */
+ function checkDuplicates(Array) {
+    return new Set(Array).length !== Array.length;
+} //If returns true,then there is no duplicates
+console.log(checkDuplicates(addressBook));
+
 
 
 
