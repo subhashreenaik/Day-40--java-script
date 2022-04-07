@@ -68,6 +68,23 @@ class Person {
      const pattern_ADDRESS_CITY_STATE = /^[A-Za-z0-9.+,-\s]{4,}$/;
 
 
+//UC3:-
+/**
+* @purpose -> UC3 : Ability to create a New Address Book array and add new
+*                   Contacts to it.   
+* **/
+
+function addPerson(firstName, lastName, emailId, phoneNumber, zipCode, address, city, state) {
+    let person = new Person(firstName, lastName, emailId, phoneNumber, zipCode, address, city, state);
+    if (pattern_NAME.test(person.firstName) && pattern_NAME.test(person.lastName) && pattern_EMAILID.test(person.emailId) && pattern_PHONENUMBER.test(person.phoneNumber) && pattern_ZipCode.test(person.zipCode) && pattern_ADDRESS_CITY_STATE.test(person.address) && pattern_ADDRESS_CITY_STATE.test(person.city) && pattern_ADDRESS_CITY_STATE.test(person.state)) {
+        return person;
+    } else {
+        console.log("Invalid Input!!!");
+    }
+}
+console.log(addPerson("Subhashree","Naik","abc@gmail.com","91 1234567890","411017","near shiv","Pune","Maharastra"));
+
+
 
 
 
