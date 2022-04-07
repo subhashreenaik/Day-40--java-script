@@ -135,7 +135,7 @@ console.log(findAndEditByName(addressBook, "Ram", "Ram kumar Naik")); // UC4 edi
     }
     return Array;
 }
-console.log(deletePersonFromArray(addressBook, "Ram")); 
+//console.log(deletePersonFromArray(addressBook, "Ram")); 
 
 /**
  * @purpose -> UC6 : Ability to find number of contacts in the address book
@@ -210,5 +210,43 @@ console.log(searchPersonByCity(addressBook,"Pune"));
         return a == b ? 0 : a > b ? 1 : -1;
     });
 }
-console.log(sortByFirstName(addressBook));
+let addressBookForSorting = [...addressBook];
+console.log(sortByFirstName(addressBookForSorting));
 
+/**
+ * @purpose -> UC12 : Ability to sort the entries in the address book by City, State, or Zip
+ * @param {*} Array 
+ * @param {*} cityName 
+ * @returns 
+ */
+ function SortByCityOrByStateOrByZipcode(Array) {
+    const prompt = require("prompt-sync")();
+    const choice = prompt("Sort by city -> (1)\nSort by state -> (2)\nSort by zip Code -> (3)");
+    switch (choice) {
+        case "1": // Sort by city
+            Array.sort(function(x, y) {
+                let a = x.getcity(),
+                    b = y.getcity();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            break;
+        case "2": // Sort by state
+            Array.sort(function(x, y) {
+                let a = x.getstate(),
+                    b = y.getstate();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            break;
+        case "3": // Sort by zip Code
+            Array.sort(function(x, y) {
+                let a = x.getzipCode(),
+                    b = y.getzipCode();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            break;
+        default:
+            break;
+    }
+
+
+}
