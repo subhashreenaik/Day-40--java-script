@@ -184,4 +184,18 @@ console.log(serachPersonInACity(addressBook,"Syam"));
 }
 console.log(searchPersonByCity(addressBook,"Pune"));
 
+/**
+ * @purpose -> UC10 : Ability to get number of contact persons i.e. count by City or State - Search Result will show count by city and
+ * @param {*} Array 
+ * @param {*} cityName 
+ * @param {*} stateName
+ * @returns It returs the number of contact persons in city and state
+ */
+ function countPersonByCityState(Array, cityName, stateName) {
+    const cityCount = Array.filter(element => element.getcity() == cityName);
+    const stateCount = Array.filter(element => element.getstate() == stateName);
+    return console.log("The number of  perosns by  counting --> (" + cityCount.length + ") \nThe number of  perosn by  counting is --> (" + stateCount.length + ")");
+}
+
+
 
