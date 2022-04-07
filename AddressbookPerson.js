@@ -171,6 +171,17 @@ console.log(checkDuplicates(addressBook));
 console.log(serachPersonInACity(addressBook,"Syam"));
 
 
-
+/**
+ * @purpose -> UC9 :  Ability to view Persons by City or State
+ * 
+ * @param {*} Array 
+ * @param {*} cityName 
+ * @returns It returns the person details
+ */
+ function searchPersonByCity(Array, cityName) {
+    const person = Array.filter(element => element.getcity() == cityName)
+    return person;
+}
+console.log(searchPersonByCity(addressBook,"Pune"));
 
 
