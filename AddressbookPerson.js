@@ -135,5 +135,19 @@ console.log(findAndEditByName(addressBook, "Ram", "Ram kumar Naik")); // UC4 edi
     }
     return Array;
 }
-console.log(deletePersonFromArray(addressBook, "Ram", "Ram kumar Naik")); 
+console.log(deletePersonFromArray(addressBook, "Ram")); 
+
+/**
+ * @purpose -> UC6 : Ability to find number of contacts in the address book
+ * @param {*} Array 
+ * @returns It returns the count of the array 
+ */
+ function countOfContactInAddressBook(Array) {
+    return Array.length;
+}
+
+console.log(countOfContactInAddressBook(addressBook));
+
+
+
 
