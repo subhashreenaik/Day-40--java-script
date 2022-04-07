@@ -198,4 +198,17 @@ console.log(searchPersonByCity(addressBook,"Pune"));
 }
 
 
+/**
+ * @purpose -> Ability to sort the entries in the address book alphabetically by Person’s name
+ * @param {*} Array 
+ * @returns It returns the sorted list
+ */
+ function sortByFirstName(Array) {
+    Array.sort(function(x, y) {
+        let a = x.getfirstName();
+            b = y.getfirstName();
+        return a == b ? 0 : a > b ? 1 : -1;
+    });
+}
+console.log(sortByFirstName(addressBook));
 
