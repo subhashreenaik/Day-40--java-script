@@ -84,7 +84,24 @@ function addPerson(firstName, lastName, emailId, phoneNumber, zipCode, address, 
 }
 console.log(addPerson("Subhashree","Naik","abc@gmail.com","91 1234567890","411017","near shiv","Pune","Maharastra"));
 
-
+/**
+ * @purpose -> UC4 : Ability to find existing contact person using their name and edit it 
+ * 
+ * @param {*} Array 
+ * @param {*} firstName 
+ * @param {*} fullName 
+ * @returns It returns the updated array 
+ */
+ function findAndEditByName(Array, firstName, fullName) {
+    for (let index = 0; index < Array.length; index++) {
+        let element = Array[index];
+        console.log(element);
+        if (element.checkForFirstName(firstName) == true) {
+            element.editFullName(fullName);
+        }
+    }
+    return Array;
+}
 
 
 
