@@ -158,6 +158,19 @@ console.log(countOfContactInAddressBook(addressBook));
 } //If returns true,then there is no duplicates
 console.log(checkDuplicates(addressBook));
 
+/**
+ * @purpose -> UC8 : Ability to view Persons by City or State
+ * @param {*} Array 
+ * @param {*} fullName 
+ * @returns 
+ */
+ function serachPersonInACity(Array, firstName) {
+    const numberOfPersonInCity = Array.filter(element => element.getfirstName == firstName)
+    return numberOfPersonInCity;
+}
+console.log(serachPersonInACity(addressBook,"Syam"));
+
+
 
 
 
