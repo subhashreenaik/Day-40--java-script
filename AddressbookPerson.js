@@ -47,6 +47,15 @@ class Person {
     getstate() {
         return this.state;
     }
+    editFullName(fullName) {
+        const newFullNew = fullName.split(" "); 
+        this.firstName = newFullNew[0];
+        this.lastName = newFullNew[1];
+    }
+
+    checkForFirstName(firstname) {
+        return this.getfirstName().includes(firstname); // ture if name is incuded in array 
+    }
 }
 
 //UC 2:-
@@ -103,6 +112,28 @@ console.log(addPerson("Subhashree","Naik","abc@gmail.com","91 1234567890","41101
     return Array;
 }
 
+let personArray1 = new Array(addPerson("Ram", "Patel", "rampatel@gmail.com", "91 8527418525", 456224, "near shiv temple", "Pune", "Maharastra"));
+let personArray2 = new Array(addPerson("Syam", "Naik", "syamnaik@gmail.com", "91 9008622627", 560037, "near balaji temple", "Bbhubaneswar", "Odisha"));
+let personArray3 = new Array(addPerson("Gita", "Gupta", "gitagupta@gmail.com", "91 8527419643", 560001, "near marketing building", "Bhubaneswar", "Odisha"));
+let addressBook = new Array(...personArray1, ...personArray2, ...personArray3); 
+ console.log(addressBook);
 
+console.log(findAndEditByName(addressBook, "Ram", "Ram kumar Naik")); // UC4 edit person
 
+/**
+ * @purpose -> UC5 : Ability to find a person with name delete it from the array
+ * @param {*} Array 
+ * @param {*} firstName 
+ * @returns It returns the updated array 
+ */
+ function deletePersonFromArray(Array, firstName) {
+    for (let index = 0; index < Array.length; index++) {
+        const element = Array[index];
+        if (element.getfirstName() == firstName) {
+            Array.splice(element.getfirstName, 1)
+        }
+    }
+    return Array;
+}
+console.log(deletePersonFromArray(addressBook, "Ram", "Ram kumar Naik")); 
 
